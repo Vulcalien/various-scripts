@@ -1,0 +1,6 @@
+#!/bin/sh
+
+charge_now=$(cat /sys/class/power_supply/BAT0/charge_now)
+charge_full=$(cat /sys/class/power_supply/BAT0/charge_full)
+
+echo $((100 * $charge_now / $charge_full))%
